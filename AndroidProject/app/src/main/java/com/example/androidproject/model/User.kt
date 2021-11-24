@@ -1,6 +1,7 @@
 package com.example.androidproject.model
 
 import com.squareup.moshi.JsonClass
+import java.io.File
 
 //import com.google.gson.annotations.SerializedName
 
@@ -22,6 +23,23 @@ data class LoginResponse (
     var refresh_time: Long
 )
 
+@JsonClass(generateAdapter = true)
+data class RegisterRequest(
+    var username: String,
+    var password: String,
+    var email: String,
+    var phone_number: String,
+    var token: String,
+    var userImage: File
+
+)
+
+@JsonClass(generateAdapter = true)
+data class RegisterResponse(
+    var code: String,
+    var message:String,
+    var creation_time: Long
+)
 
 // GSon converter
 //data class LoginRequest (

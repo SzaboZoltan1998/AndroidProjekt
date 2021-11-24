@@ -1,9 +1,7 @@
 package com.example.androidproject.repository
 
 import com.example.androidproject.api.RetrofitInstance
-import com.example.androidproject.model.LoginRequest
-import com.example.androidproject.model.LoginResponse
-import com.example.androidproject.model.ProductResponse
+import com.example.androidproject.model.*
 
 class Repository {
     suspend fun login(request: LoginRequest): LoginResponse {
@@ -12,5 +10,8 @@ class Repository {
 
     suspend fun getProducts(token: String): ProductResponse {
         return RetrofitInstance.api.getProducts(token)
+    }
+    suspend fun register(request: RegisterRequest): RegisterResponse {
+        return RetrofitInstance.api.register(request)
     }
 }
