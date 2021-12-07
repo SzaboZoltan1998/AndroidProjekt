@@ -5,7 +5,10 @@ import java.io.File
 
 //import com.google.gson.annotations.SerializedName
 
-data class User(var username: String="", var password: String="", val email: String="", var phone_number: String="")
+data class User(var username: String="", var password: String="", var email: String="", var phone_number: String=""){
+    constructor( username: String="",  password: String="", email: String="", phone_number: String="",image: File): this()
+}
+
 
 @JsonClass(generateAdapter = true)
 data class LoginRequest (
@@ -29,7 +32,6 @@ data class RegisterRequest(
     var password: String,
     var email: String,
     var phone_number: String,
-    var token: String,
     var userImage: File
 
 )
@@ -41,6 +43,17 @@ data class RegisterResponse(
     var creation_time: Long
 )
 
+@JsonClass(generateAdapter = true)
+data class ResetPasswordRequest(
+    var username: String,
+    var email: String
+
+)
+@JsonClass(generateAdapter = true)
+data class ResetPasswordResponse(
+    var token: String,
+    var password: String
+)
 // GSon converter
 //data class LoginRequest (
 //    @SerializedName("username")

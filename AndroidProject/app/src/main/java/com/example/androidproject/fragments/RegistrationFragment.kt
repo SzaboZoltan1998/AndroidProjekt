@@ -60,21 +60,23 @@ class RegistrationFragment : Fragment() {
                 if (it != null) {
                     it.password = editText4.text.toString()
                 }
-                /*
+
                 if (it!=null)
                 {
-
-                }*/
+                    //it.image=imageView.im
+                }
             }
             lifecycleScope.launch {
                 registrationViewModel.register()
             }
 
         }
+        /*
         registrationViewModel.token.observe(viewLifecycleOwner){
             Log.d("xxx", "navigate to list")
-            //findNavController().navigate(R.id.action_loginFragment_to_listFragment)
-        }
+            findNavController(view).navigate(R.id.action_loginFragment_to_listFragment)
+            //findNavController(view).navigate()
+        }*/
         return view
     }
 }

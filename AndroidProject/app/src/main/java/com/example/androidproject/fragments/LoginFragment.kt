@@ -59,7 +59,7 @@ class LoginFragment : Fragment() {
         }
         loginViewModel.token.observe(viewLifecycleOwner){
             Log.d("xxx", "navigate to list")
-            findNavController().navigate(R.id.action_loginFragment_to_listFragment)
+            findNavController(view).navigate(R.id.action_loginFragment_to_listFragment)
         }
         return view
     }

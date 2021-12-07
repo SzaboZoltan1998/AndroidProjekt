@@ -34,6 +34,7 @@
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView_register_fragment" />
+
         <EditText
             android:id="@+id/edittext_name_email_fragment"
             android:layout_width="wrap_content"
@@ -46,6 +47,7 @@
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edittext_name_registration_fragment" />
+
         <EditText
             android:id="@+id/edittext_phone_number_fragment"
             android:layout_width="wrap_content"
@@ -71,6 +73,7 @@
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edittext_phone_number_fragment" />
+
         <ImageView
             android:id="@+id/imageview_profile_picture_fragment"
             android:layout_width="wrap_content"
@@ -82,7 +85,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edittext_phone_number_fragment"/>
+            app:layout_constraintTop_toBottomOf="@+id/edittext_phone_number_fragment" />
 
         <Button
             android:id="@+id/button_register_fragment"
