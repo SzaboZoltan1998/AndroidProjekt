@@ -42,7 +42,6 @@ class RegistrationFragment : Fragment() {
         val editText2: EditText = view.findViewById(R.id.edittext_name_email_fragment)
         val editText3: EditText = view.findViewById(R.id.edittext_phone_number_fragment)
         val editText4: EditText= view.findViewById(R.id.edittext_password_login_fragment)
-        val imageView: ImageView=view.findViewById(R.id.imageview_profile_picture_fragment)
         val button: Button = view.findViewById(R.id.button_login_fragment)
         button.setOnClickListener {
             registrationViewModel.user.value.let {
@@ -61,22 +60,18 @@ class RegistrationFragment : Fragment() {
                     it.password = editText4.text.toString()
                 }
 
-                if (it!=null)
-                {
-                    //it.image=imageView.im
-                }
             }
             lifecycleScope.launch {
                 registrationViewModel.register()
             }
 
         }
-        /*
-        registrationViewModel.token.observe(viewLifecycleOwner){
+
+        registrationViewModel.code.observe(viewLifecycleOwner){
             Log.d("xxx", "navigate to list")
             findNavController(view).navigate(R.id.action_loginFragment_to_listFragment)
             //findNavController(view).navigate()
-        }*/
+        }
         return view
     }
 }
