@@ -8,6 +8,7 @@ import com.example.androidproject.MyApplication
 import com.example.androidproject.model.LoginRequest
 import com.example.androidproject.model.User
 import com.example.androidproject.repository.Repository
+import com.example.androidproject.utils.ToastError
 
 class LoginViewModel(val context: Context, val repository: Repository) : ViewModel() {
     var token: MutableLiveData<String> = MutableLiveData()
@@ -33,6 +34,17 @@ class LoginViewModel(val context: Context, val repository: Repository) : ViewMod
 //    }
 
     suspend fun login() {
+        val username = "hentaiZoli"
+
+        try {
+            val result= repository.activate(username)
+
+        }catch (e: Exception) {
+
+        }
+
+
+
         val request =
             LoginRequest(username = user.value!!.username, password = user.value!!.password)
         try {
@@ -41,6 +53,7 @@ class LoginViewModel(val context: Context, val repository: Repository) : ViewMod
             token.value = result.token
             Log.d("xxx", "MyApplication - token:  ${MyApplication.token}")
         } catch (e: Exception) {
+            ToastError.showtoast(context, e)
             Log.d("xxx", "LoginViewModel - exception: ${e.toString()}")
         }
     }
