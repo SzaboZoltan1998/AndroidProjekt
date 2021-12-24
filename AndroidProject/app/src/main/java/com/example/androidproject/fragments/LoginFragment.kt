@@ -38,12 +38,12 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_login, container, false)
         val editText1: EditText = view.findViewById(R.id.edittext_name_login_fragment)
         val editText2: EditText = view.findViewById(R.id.edittext_password_login_fragment)
         val button1: Button = view.findViewById(R.id.button_login_fragment)
         val button2:Button=view.findViewById(R.id.button_forgot_login_fragment)
+        val button3:Button=view.findViewById(R.id.register_login_fragment)
         button1.setOnClickListener {
             loginViewModel.user.value.let {
                 if (it != null) {
@@ -59,12 +59,14 @@ class LoginFragment : Fragment() {
 
             loginViewModel.token.observe(viewLifecycleOwner){
                 Log.d("xxx", "navigate to list")
-                //findNavController(view).navigate(R.id.action_loginFragment_to_listFragment)
                 findNavController(view).navigate(R.id.action_loginFragment_to_profileFragment)
             }
         }
         button2.setOnClickListener {
             findNavController(view).navigate(R.id.action_loginFragment_to_forgotpasswordFragment)
+        }
+        button3.setOnClickListener {
+            findNavController(view).navigate(R.id.action_loginFragment_to_registrationFragment)
         }
 
 

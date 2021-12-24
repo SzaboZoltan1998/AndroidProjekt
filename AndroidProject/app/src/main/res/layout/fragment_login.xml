@@ -14,7 +14,7 @@
             android:id="@+id/textView_login_fragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="54dp"
             android:text="Log in"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +26,7 @@
             android:id="@+id/edittext_name_login_fragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="54dp"
             android:ems="10"
             android:hint="Name"
             android:inputType="textPersonName"
@@ -39,7 +39,7 @@
             android:id="@+id/edittext_password_login_fragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="54dp"
             android:ems="10"
             android:hint="Password"
             android:inputType="textPassword"
@@ -52,21 +52,32 @@
             android:id="@+id/button_login_fragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="54dp"
             android:text="Log in"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edittext_password_login_fragment" />
         <Button
-            android:id="@+id/button_forgot_login_fragment"
+            android:id="@+id/register_login_fragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
-            android:text="Forgot Password"
+            android:layout_marginTop="54dp"
+            android:text="Register "
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button_login_fragment" />
+
+        <Button
+            android:id="@+id/button_forgot_login_fragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="54dp"
+            android:text="Forgot Password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/register_login_fragment" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

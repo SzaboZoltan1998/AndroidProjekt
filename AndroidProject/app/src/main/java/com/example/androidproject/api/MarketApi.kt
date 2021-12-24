@@ -16,9 +16,15 @@ interface MarketApi {
     @POST(Constants.REGISTER_URL)
     suspend fun register(@Body request: RegisterRequest) : RegisterResponse
 
-    @GET("user/activate")
+    @GET(Constants.ACTIVATE_URL)
     suspend fun activate(@Query("username") userName: String) : HttpResponseCache
 
     @POST(Constants.CHANGE_PROFILE_URL)
     suspend fun change(@Body request: UpdateUserDataRequest):UpdateUserDataRespons
+
+    @POST(Constants.RESET_PASSWORD_URL)
+    suspend fun resetPassword(@Body request: ResetPasswordRequest):ResetPasswordResponse
+
+    @GET(Constants.RESET_PASSWORD_URL)
+    suspend fun resetPasswordT(@Header("token") token: String,@Header("password") password: String):ResetPasswordResponse
 }

@@ -34,7 +34,7 @@ class ForgotPasswordFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_registration, container, false)
+        val view = inflater.inflate(R.layout.fragment_forgot_password, container, false)
         val textview1:TextView=view.findViewById(R.id.forgot_view1)
         val textview2:TextView=view.findViewById(R.id.forgot_view2)
         val editText1: EditText = view.findViewById(R.id.edittext_email_forgotp_fragment)

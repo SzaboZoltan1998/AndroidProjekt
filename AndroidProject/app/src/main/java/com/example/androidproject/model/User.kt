@@ -44,19 +44,6 @@ data class RegisterResponse(
     var message:String,
     var creation_time: Long
 )
-
-@JsonClass(generateAdapter = true)
-data class ResetPasswordRequest(
-    var username: String,
-    var email: String
-
-)
-@JsonClass(generateAdapter = true)
-data class ResetPasswordResponse(
-    var code: String,
-    var message:String,
-    var time_stamp: Long
-)
 @JsonClass(generateAdapter = true)
 data class Activate(
     var username: String
@@ -69,7 +56,20 @@ data class RefreshToken(
     var refresh_time: Long
 )
 @JsonClass(generateAdapter = true)
-data class TokenResetPassword(
+data class ResetPasswordRequest(
+    var username: String,
+    var email: String
+
+)
+@JsonClass(generateAdapter = true)
+data class ResetPasswordResponse(
+    var code: String,
+    var message:String,
+    var time_stamp: Long
+)
+
+@JsonClass(generateAdapter = true)
+data class TokenResetPasswordRequest(
     var token: String,
     var password: String
 )

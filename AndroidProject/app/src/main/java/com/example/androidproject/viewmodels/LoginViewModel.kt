@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.androidproject.MainActivity
 import com.example.androidproject.MyApplication
 import com.example.androidproject.model.LoginRequest
 import com.example.androidproject.model.User
@@ -34,16 +35,6 @@ class LoginViewModel(val context: Context, val repository: Repository) : ViewMod
 //    }
 
     suspend fun login() {
-        val username = "hentaiZoli"
-
-        try {
-            val result= repository.activate(username)
-
-        }catch (e: Exception) {
-
-        }
-
-
 
         val request =
             LoginRequest(username = user.value!!.username, password = user.value!!.password)
@@ -52,6 +43,8 @@ class LoginViewModel(val context: Context, val repository: Repository) : ViewMod
             MyApplication.token = result.token
             token.value = result.token
             Log.d("xxx", "MyApplication - token:  ${MyApplication.token}")
+            //TO DO shared preff
+            (context as MainActivity).refreshToken()
         } catch (e: Exception) {
             ToastError.showtoast(context, e)
             Log.d("xxx", "LoginViewModel - exception: ${e.toString()}")

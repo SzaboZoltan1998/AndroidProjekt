@@ -22,4 +22,10 @@ class Repository {
     suspend fun change(request: UpdateUserDataRequest):UpdateUserDataRespons{
         return RetrofitInstance.api.change(request)
     }
+    suspend fun resetPassword(request: ResetPasswordRequest):ResetPasswordResponse{
+        return RetrofitInstance.api.resetPassword(request)
+    }
+    suspend fun resetPasswordT(token: String,password:String):ResetPasswordResponse{
+        return RetrofitInstance.api.resetPasswordT(token, password)
+    }
 }

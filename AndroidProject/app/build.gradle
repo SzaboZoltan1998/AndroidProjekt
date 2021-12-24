@@ -55,6 +55,7 @@ dependencies {
 
     implementation "com.squareup.moshi:moshi:$moshi_version"
     implementation "com.squareup.moshi:moshi-kotlin:$moshi_version"
+    implementation group: 'org.jsoup',name: 'jsoup',version: '1.14.3'
     //kapt "com.squareup.moshi:moshi-kotlin-codegen:$moshi_version"
 
     // Glide

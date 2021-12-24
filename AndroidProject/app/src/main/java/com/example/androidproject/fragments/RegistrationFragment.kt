@@ -42,7 +42,7 @@ class RegistrationFragment : Fragment() {
         val editText2: EditText = view.findViewById(R.id.edittext_name_email_fragment)
         val editText3: EditText = view.findViewById(R.id.edittext_phone_number_fragment)
         val editText4: EditText= view.findViewById(R.id.edittext_password_login_fragment)
-        val button: Button = view.findViewById(R.id.button_login_fragment)
+        val button: Button = view.findViewById(R.id.button_register_fragment)
         button.setOnClickListener {
             registrationViewModel.user.value.let {
                 if (it != null) {
@@ -69,7 +69,7 @@ class RegistrationFragment : Fragment() {
 
         registrationViewModel.code.observe(viewLifecycleOwner){
             Log.d("xxx", "navigate to list")
-            findNavController(view).navigate(R.id.action_loginFragment_to_listFragment)
+            findNavController(view).navigate(R.id.action_registrationFragment_to_loginFragment)
             //findNavController(view).navigate()
         }
         return view
