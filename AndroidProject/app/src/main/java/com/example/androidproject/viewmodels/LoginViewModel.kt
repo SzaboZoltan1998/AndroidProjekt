@@ -6,48 +6,40 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.androidproject.MainActivity
 import com.example.androidproject.MyApplication
+import com.example.androidproject.MyApplication.Companion.token
+import com.example.androidproject.model.LoginModel
 import com.example.androidproject.model.LoginRequest
 import com.example.androidproject.model.User
 import com.example.androidproject.repository.Repository
+import com.example.androidproject.utils.Navigator
+import com.example.androidproject.utils.SharedPrefUtils
 import com.example.androidproject.utils.ToastError
 
 class LoginViewModel(val context: Context, val repository: Repository) : ViewModel() {
-    var token: MutableLiveData<String> = MutableLiveData()
-    var user = MutableLiveData<User>()
+    private val TAG = "LoginViewModel"
+    private var mLoginData : MutableLiveData<LoginModel>? = null
 
-    init {
-        user.value = User()
+    fun setDataModel(loginModel: LoginModel) {
+        mLoginData = MutableLiveData(loginModel)
     }
 
-//    fun login() {
-//        viewModelScope.launch {
-//            val request =
-//                LoginRequest(username = user.value!!.username, password = user.value!!.password)
-//            try {
-//                val result = repository.login(request)
-//                MyApplication.token = result.token
-//                token.value = result.token
-//                Log.d("xxx", "MyApplication - token:  ${MyApplication.token}")
-//            }catch(e: Exception){
-//                Log.d("xxx", "MainViewModel - exception: ${e.toString()}")
-//            }
-//        }
-//    }
-
     suspend fun login() {
-
-        val request =
-            LoginRequest(username = user.value!!.username, password = user.value!!.password)
         try {
-            val result = repository.login(request)
-            MyApplication.token = result.token
-            token.value = result.token
-            Log.d("xxx", "MyApplication - token:  ${MyApplication.token}")
-            //TO DO shared preff
-            (context as MainActivity).refreshToken()
+
+            Log.d(TAG, "login: "+mLoginData?.toString())
+            val model = repository.login(mLoginData!!.value!!)
+            Log.d(TAG, "Login succeeded" + (model.toString()))
+            SharedPrefUtils.save(context, SharedPrefUtils.USERNAME ,model.username)
+            SharedPrefUtils.save(context, SharedPrefUtils.EMAIL, model.email)
+            SharedPrefUtils.save(context, SharedPrefUtils.TOKEN, model.token)
+            SharedPrefUtils.save(context, SharedPrefUtils.IMAGE_PATH,model.imagePath)
+            SharedPrefUtils.save(context, SharedPrefUtils.CREATION_TIME, model.creationTime)
+            SharedPrefUtils.save(context, SharedPrefUtils.REFRESH_TIME, model.refreshTime)
+
+            Navigator.getsInstance(context).showTimelineFragment()
         } catch (e: Exception) {
             ToastError.showtoast(context, e)
-            Log.d("xxx", "LoginViewModel - exception: ${e.toString()}")
+            Log.d("xxx", "LoginViewModel - exception: ", e)
         }
     }
 }

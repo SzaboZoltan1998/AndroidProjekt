@@ -1,5 +1,6 @@
 package com.example.androidproject.fragments
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 
@@ -21,12 +22,29 @@ import com.example.androidproject.repository.Repository
 import com.example.androidproject.viewmodels.ListViewModel
 import com.example.androidproject.viewmodels.ListViewModelFactory
 import androidx.recyclerview.widget.DividerItemDecoration
+import com.example.androidproject.databinding.LoginFragmentBinding
+import com.example.androidproject.interfaces.MainFragmentListener
+import com.example.androidproject.model.LoginModel
+import com.example.androidproject.utils.Navigator
+import com.example.androidproject.utils.SharedPrefUtils
 import com.example.androidproject.viewmodels.LoginViewModel
 import com.example.androidproject.viewmodels.LoginViewModelFactory
+import io.reactivex.disposables.Disposable
+import io.reactivex.schedulers.Schedulers
 import kotlinx.coroutines.launch
 
 class LoginFragment : Fragment() {
+    private val TAG = "LoginFragment"
     private lateinit var loginViewModel: LoginViewModel
+    private var mBinding: LoginFragmentBinding? = null
+    private var mMainFragmentListener: MainFragmentListener? = null
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if (arguments != null) {
+            mMainFragmentListener = arguments?.getSerializable("KEY_MAIN_LISTENER") as MainFragmentListener?
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,38 +56,35 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_login, container, false)
-        val editText1: EditText = view.findViewById(R.id.edittext_name_login_fragment)
-        val editText2: EditText = view.findViewById(R.id.edittext_password_login_fragment)
-        val button1: Button = view.findViewById(R.id.button_login_fragment)
-        val button2:Button=view.findViewById(R.id.button_forgot_login_fragment)
-        val button3:Button=view.findViewById(R.id.register_login_fragment)
-        button1.setOnClickListener {
-            loginViewModel.user.value.let {
-                if (it != null) {
-                    it.username = editText1.text.toString()
-                }
-                if (it != null) {
-                    it.password = editText2.text.toString()
-                }
-            }
+        if (mBinding == null) {
+            mBinding = LoginFragmentBinding.inflate(inflater, container, false)
+            initViews()
+        }
+
+        mMainFragmentListener!!.hideBottomNav()
+        mMainFragmentListener!!.showLoginIcons()
+        return mBinding?.root
+    }
+
+    private fun initViews() {
+        mBinding!!.signUp.setOnClickListener {
+            Navigator.getsInstance(requireContext()).showRegisterFragment()
+        }
+
+        mBinding!!.clickHere.setOnClickListener {
+            Navigator.getsInstance(requireContext()).showForgotPasswordFragment()
+        }
+
+        mBinding!!.loginButton.setOnClickListener {
+            loginViewModel.setDataModel(LoginModel(
+                mBinding!!.userNameEt.text.toString(),
+                mBinding!!.passwordEt.text.toString()
+            ))
+
             lifecycleScope.launch {
                 loginViewModel.login()
             }
-
-            loginViewModel.token.observe(viewLifecycleOwner){
-                Log.d("xxx", "navigate to list")
-                findNavController(view).navigate(R.id.action_loginFragment_to_profileFragment)
-            }
-        }
-        button2.setOnClickListener {
-            findNavController(view).navigate(R.id.action_loginFragment_to_forgotpasswordFragment)
-        }
-        button3.setOnClickListener {
-            findNavController(view).navigate(R.id.action_loginFragment_to_registrationFragment)
         }
 
-
-        return view
     }
 }

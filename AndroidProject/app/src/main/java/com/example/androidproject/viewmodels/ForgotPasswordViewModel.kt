@@ -10,8 +10,6 @@ import com.example.androidproject.repository.Repository
 import com.example.androidproject.utils.ToastError
 
 class ForgotPasswordViewModel (val context: Context, val repository: Repository) : ViewModel()  {
-    var token: MutableLiveData<String> = MutableLiveData()
-    var code: MutableLiveData<String> = MutableLiveData()
     var user = MutableLiveData<User>()
 
     init {
@@ -19,20 +17,20 @@ class ForgotPasswordViewModel (val context: Context, val repository: Repository)
     }
 
 
-    suspend fun resend(){
-        val request =
-            ResetPasswordRequest(username = user.value!!.username, email = user.value!!.email)
-        try {
-            val result = repository.resetPassword(request)
-            MyApplication.code = result.code
-            code.value = result.code
-            Log.d("xxx", "MyApplication - code:  ${MyApplication.code}")
-        } catch (e: Exception) {
-            ToastError.showtoast(context, e)
-            Log.d("xxx", "LoginViewModel - exception: ${e.toString()}")
-        }
-    }
-    suspend fun resendT(){
-        val request=TokenResetPasswordRequest(MyApplication.token,)
-    }
+//    suspend fun resend(){
+//        val request =
+//            ResetPasswordRequest(username = user.value!!.username, email = user.value!!.email)
+//        try {
+//            val result = repository.resetPassword(request)
+//            MyApplication.code = result.code
+//            code.value = result.code
+//            Log.d("xxx", "MyApplication - code:  ${MyApplication.code}")
+//        } catch (e: Exception) {
+//            ToastError.showtoast(context, e)
+//            Log.d("xxx", "LoginViewModel - exception: ${e.toString()}")
+//        }
+//    }
+//    suspend fun resendT(){
+//        val request=TokenResetPasswordRequest(MyApplication.token,)
+//    }
 }

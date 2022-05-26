@@ -2,36 +2,24 @@ package com.example.androidproject.fragments
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
-
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.Navigation.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.androidproject.R
-import com.example.androidproject.adapters.DataAdapter
-import com.example.androidproject.model.Product
-import com.example.androidproject.repository.Repository
-import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.androidproject.databinding.RegisterFragmentBinding
 import com.example.androidproject.interfaces.MainFragmentListener
-import com.example.androidproject.viewmodels.*
-import io.reactivex.schedulers.Schedulers
+import com.example.androidproject.repository.Repository
+import com.example.androidproject.viewmodels.RegistrationViewModel
+import com.example.androidproject.viewmodels.RegistrationViewModelFactory
 import kotlinx.coroutines.launch
 
-class RegistrationFragment : Fragment() {
-    private lateinit var registrationViewModel: RegistrationViewModel
-    private var mBinding: RegisterFragmentBinding? = null
+class RegisterFragment() : Fragment() {
+
     private var mMainFragmentListener: MainFragmentListener? = null
+    private var mBinding: RegisterFragmentBinding? = null
+    private var mViewModel: RegistrationViewModel? = null
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -42,8 +30,8 @@ class RegistrationFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val factory = RegistrationViewModelFactory(this.requireContext(), Repository())
-        registrationViewModel = ViewModelProvider(this, factory).get(RegistrationViewModel::class.java)
+        val factory = RegistrationViewModelFactory(requireContext(), Repository())
+        mViewModel = ViewModelProvider(this, factory).get(RegistrationViewModel::class.java)
     }
 
     override fun onCreateView(
@@ -63,9 +51,8 @@ class RegistrationFragment : Fragment() {
 
     private fun initViews() {
         mBinding!!.registerButton.setOnClickListener {
-            lifecycleScope.launch {
-                registrationViewModel.register()
-            }
+            lifecycleScope.launch { mViewModel?.register() }
         }
     }
+
 }

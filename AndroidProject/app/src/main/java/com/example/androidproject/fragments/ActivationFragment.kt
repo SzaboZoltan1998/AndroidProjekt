@@ -19,34 +19,26 @@ import kotlinx.coroutines.launch
 
 
 class ActivationFragment : Fragment() {
-    private lateinit var activationFragment: ActivationViewModel
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        val factory = ActivationViewModelFactory(this.requireContext(), Repository())
-        activationFragment = ViewModelProvider(this, factory).get(ActivationViewModel::class.java)
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_activation, container, false)
-
-            lifecycleScope.launch {
-                activationFragment.activate()
-            }
-
-            activationFragment.token.observe(viewLifecycleOwner){
-                Log.d("xxx", "navigate to login")
-                //findNavController(view).navigate(R.id.action_loginFragment_to_listFragment)
-                Navigation.findNavController(view).navigate(R.id.action_activationFragment_to_loginFragment)
-            }
-
-
-
-
-        return view
-    }
+//    private lateinit var activationFragment: ActivationViewModel
+//
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        val factory = ActivationViewModelFactory(this.requireContext(), Repository())
+//        activationFragment = ViewModelProvider(this, factory).get(ActivationViewModel::class.java)
+//    }
+//
+//    override fun onCreateView(
+//        inflater: LayoutInflater, container: ViewGroup?,
+//        savedInstanceState: Bundle?
+//    ): View? {
+//        // Inflate the layout for this fragment
+//        val view = inflater.inflate(R.layout.fragment_activation, container, false)
+//
+//            lifecycleScope.launch {
+//                activationFragment.activate()
+//            }
+//
+//
+//        return view
+//    }
 }

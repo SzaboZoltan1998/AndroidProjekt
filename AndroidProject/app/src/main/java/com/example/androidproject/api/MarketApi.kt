@@ -27,4 +27,18 @@ interface MarketApi {
 
     @GET(Constants.RESET_PASSWORD_URL)
     suspend fun resetPasswordT(@Header("token") token: String,@Header("password") password: String):ResetPasswordResponse
+
+    @Multipart
+    @POST("products/add")
+    suspend fun addProduct(
+        @Header("token") token: String?,
+        @Part("title") title: String?,
+        @Part("description") description: String?,
+        @Part("price_per_unit") price_per_unit: String?,
+        @Part("units") units: String?,
+        @Part("is_active") is_active: Boolean?,
+        @Part("rating") rating: Double?,
+        @Part("amount_type") amount_type: String?,
+        @Part("price_type") price_type: String?
+    ): AddProductResponseModel
 }
