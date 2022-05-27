@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEEEEE"
+    >
+
+    <ImageView
+        android:id="@+id/detail_background"
+        android:layout_width="wrap_content"
+        android:layout_height="202dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/background_detail"
+        android:scaleType="centerCrop"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/image_rv"
+        android:layout_width="wrap_content"
+        android:layout_height="59dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="88dp"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        />
+
+    <ImageView
+        android:id="@+id/acc_logo"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_below="@id/detail_background"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_avdefault_avatar"
+        />
+
+    <TextView
+        android:id="@+id/acc_name"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_below="@id/detail_background"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:layout_toEndOf="@id/acc_logo"
+        android:text="Account name"
+        android:textColor="#B3212121"
+        android:textSize="12sp"
+        android:gravity="center"
+        />
+
+    <ImageView
+        android:id="@+id/edit_button"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/acc_name"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_edit"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/acc_name"
+        android:layout_alignParentStart="true"
+        style="@style/TextViewBlackColor"
+        android:textSize="18sp"
+        android:text="TITLE"
+        android:gravity="center_vertical"
+        />
+
+    <RelativeLayout
+        android:id="@+id/price_stat_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp">
+
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            style="@style/TextViewBlackColor"
+            android:textSize="18sp"
+            android:text="45 RON / L"
+            android:gravity="center_vertical"
+            />
+
+        <ImageView
+            android:id="@+id/status_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_toStartOf="@id/status_text"
+            android:src="@drawable/ic_inactive"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="6dp"
+            />
+
+        <TextView
+            android:id="@+id/status_text"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_alignParentEnd="true"
+            style="@style/TextViewBlackColor"
+            android:textSize="12sp"
+            android:textColor="#B3212121"
+            android:text="Inactive"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            />
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        style="@style/TextViewBlackColor"
+        android:text="asdhajkdhaskdhaskdhsakdhsajkdhsaalsdnaskldaskdhaskdaskdjsaljdlaksdjaskjalkjalj
+        dsakljdalkdjaslkjaslkdjsakldjaskljaslkdjasakdnaskdaskldjsalkdjaslkjdaslkjdsaljalskjsalaskjdhj
+        sakdhjaksdhjsakdhaskdhajskdhakjdh"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/price_stat_container"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:lines="3"
+        android:maxLines="3"
+        android:ellipsize="end"
+        />
+
+
+    <TextView
+        android:id="@+id/total_items"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_below="@id/description"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/turqoise_border_round_icon"
+        android:text="2 L"
+        style="@style/turqioseColor"
+        android:gravity="center"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/price_item"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_below="@id/description"
+        android:layout_toEndOf="@id/total_items"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/turqoise_border_round_icon"
+        android:text="45 RON"
+        style="@style/turqioseColor"
+        android:gravity="center"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/selled_items"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_below="@id/description"
+        android:layout_toEndOf="@id/price_item"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/turqoise_border_round_icon"
+        android:text="0"
+        style="@style/turqioseColor"
+        android:gravity="center"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/reveniew"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_below="@id/description"
+        android:layout_toEndOf="@id/selled_items"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/turqoise_border_round_icon"
+        android:text="0"
+        style="@style/turqioseColor"
+        android:gravity="center"
+        android:visibility="gone"
+        />
+
+</RelativeLayout>

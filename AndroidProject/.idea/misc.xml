@@ -14,13 +14,44 @@
         <entry key="..\:/OneDrive/Documents/GitHub/Android/AndroidProject/app/src/main/res/layout/fragment_list.xml" value="0.25416666666666665" />
         <entry key="..\:/OneDrive/Documents/GitHub/Android/AndroidProject/app/src/main/res/layout/fragment_login.xml" value="0.25416666666666665" />
         <entry key="..\:/OneDrive/Documents/GitHub/Android/AndroidProject/app/src/main/res/layout/item_layout.xml" value="0.25416666666666665" />
+        <entry key="..\:/OneDrive/Documents/GitHub/AndroidProjekt/AndroidProject/app/src/main/res/drawable/black_button.xml" value="0.2703125" />
+        <entry key="..\:/OneDrive/Documents/GitHub/AndroidProjekt/AndroidProject/app/src/main/res/drawable/border_button.xml" value="0.2703125" />
+        <entry key="..\:/OneDrive/Documents/GitHub/AndroidProjekt/AndroidProject/app/src/main/res/drawable/button.xml" value="0.152" />
+        <entry key="..\:/OneDrive/Documents/GitHub/AndroidProjekt/AndroidProject/app/src/main/res/drawable/divider.xml" value="0.14791666666666667" />
+        <entry key="..\:/OneDrive/Documents/GitHub/AndroidProjekt/AndroidProject/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.2703125" />
+        <entry key="..\:/OneDrive/Documents/GitHub/AndroidProjekt/AndroidProject/app/src/main/res/drawable/ic_line.xml" value="0.2703125" />
+        <entry key="..\:/OneDrive/Documents/GitHub/AndroidProjekt/AndroidProject/app/src/main/res/drawable/ic_market.xml" value="0.14791666666666667" />
+        <entry key="..\:/OneDrive/Documents/GitHub/AndroidProjekt/AndroidProject/app/src/main/res/drawable/order_backgorund_turqoise.xml" value="0.14791666666666667" />
+        <entry key="..\:/OneDrive/Documents/GitHub/AndroidProjekt/AndroidProject/app/src/main/res/drawable/turqoise_border_round_icon.xml" value="0.14791666666666667" />
+        <entry key="..\:/OneDrive/Documents/GitHub/AndroidProjekt/AndroidProject/app/src/main/res/layout/account_fragment.xml" value="0.25416666666666665" />
         <entry key="..\:/OneDrive/Documents/GitHub/AndroidProjekt/AndroidProject/app/src/main/res/layout/activity_main.xml" value="0.11197916666666667" />
+        <entry key="..\:/OneDrive/Documents/GitHub/AndroidProjekt/AndroidProject/app/src/main/res/layout/app_bar_layout.xml" value="0.25416666666666665" />
+        <entry key="..\:/OneDrive/Documents/GitHub/AndroidProjekt/AndroidProject/app/src/main/res/layout/bottom_navigation.xml" value="0.25416666666666665" />
+        <entry key="..\:/OneDrive/Documents/GitHub/AndroidProjekt/AndroidProject/app/src/main/res/layout/create_fare_fragment.xml" value="0.25416666666666665" />
+        <entry key="..\:/OneDrive/Documents/GitHub/AndroidProjekt/AndroidProject/app/src/main/res/layout/detail_fragment.xml" value="0.25416666666666665" />
+        <entry key="..\:/OneDrive/Documents/GitHub/AndroidProjekt/AndroidProject/app/src/main/res/layout/fares_counter.xml" value="0.25416666666666665" />
+        <entry key="..\:/OneDrive/Documents/GitHub/AndroidProjekt/AndroidProject/app/src/main/res/layout/filter_view.xml" value="0.25416666666666665" />
+        <entry key="..\:/OneDrive/Documents/GitHub/AndroidProjekt/AndroidProject/app/src/main/res/layout/forgot_password_fragment.xml" value="0.25416666666666665" />
+        <entry key="..\:/OneDrive/Documents/GitHub/AndroidProjekt/AndroidProject/app/src/main/res/layout/fragment_account.xml" value="0.25416666666666665" />
+        <entry key="..\:/OneDrive/Documents/GitHub/AndroidProjekt/AndroidProject/app/src/main/res/layout/fragment_activation.xml" value="0.25416666666666665" />
+        <entry key="..\:/OneDrive/Documents/GitHub/AndroidProjekt/AndroidProject/app/src/main/res/layout/fragment_create_fare.xml" value="0.25416666666666665" />
+        <entry key="..\:/OneDrive/Documents/GitHub/AndroidProjekt/AndroidProject/app/src/main/res/layout/fragment_detail.xml" value="0.25416666666666665" />
         <entry key="..\:/OneDrive/Documents/GitHub/AndroidProjekt/AndroidProject/app/src/main/res/layout/fragment_forgot_password.xml" value="0.2" />
         <entry key="..\:/OneDrive/Documents/GitHub/AndroidProjekt/AndroidProject/app/src/main/res/layout/fragment_list.xml" value="0.12239583333333333" />
         <entry key="..\:/OneDrive/Documents/GitHub/AndroidProjekt/AndroidProject/app/src/main/res/layout/fragment_login.xml" value="0.25416666666666665" />
         <entry key="..\:/OneDrive/Documents/GitHub/AndroidProjekt/AndroidProject/app/src/main/res/layout/fragment_profile.xml" value="0.11197916666666667" />
         <entry key="..\:/OneDrive/Documents/GitHub/AndroidProjekt/AndroidProject/app/src/main/res/layout/fragment_registration.xml" value="0.12" />
         <entry key="..\:/OneDrive/Documents/GitHub/AndroidProjekt/AndroidProject/app/src/main/res/layout/fragment_registration2.xml" value="0.25416666666666665" />
+        <entry key="..\:/OneDrive/Documents/GitHub/AndroidProjekt/AndroidProject/app/src/main/res/layout/fragment_time_line.xml" value="0.25416666666666665" />
+        <entry key="..\:/OneDrive/Documents/GitHub/AndroidProjekt/AndroidProject/app/src/main/res/layout/image_big_fragment.xml" value="0.25416666666666665" />
+        <entry key="..\:/OneDrive/Documents/GitHub/AndroidProjekt/AndroidProject/app/src/main/res/layout/image_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/OneDrive/Documents/GitHub/AndroidProjekt/AndroidProject/app/src/main/res/layout/item_layout.xml" value="0.25416666666666665" />
+        <entry key="..\:/OneDrive/Documents/GitHub/AndroidProjekt/AndroidProject/app/src/main/res/layout/login_fragment.xml" value="0.25416666666666665" />
+        <entry key="..\:/OneDrive/Documents/GitHub/AndroidProjekt/AndroidProject/app/src/main/res/layout/main_fragment.xml" value="0.25416666666666665" />
+        <entry key="..\:/OneDrive/Documents/GitHub/AndroidProjekt/AndroidProject/app/src/main/res/layout/order_layout.xml" value="0.25416666666666665" />
+        <entry key="..\:/OneDrive/Documents/GitHub/AndroidProjekt/AndroidProject/app/src/main/res/layout/register_fragment.xml" value="0.25416666666666665" />
+        <entry key="..\:/OneDrive/Documents/GitHub/AndroidProjekt/AndroidProject/app/src/main/res/layout/search_view.xml" value="0.25416666666666665" />
+        <entry key="..\:/OneDrive/Documents/GitHub/AndroidProjekt/AndroidProject/app/src/main/res/layout/timeline_fragment.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

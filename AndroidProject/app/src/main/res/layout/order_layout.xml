@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/order_backround_selector"
+    android:id="@+id/product_item"
+    >
+
+    <ImageView
+        android:id="@+id/product_image"
+        android:layout_width="88dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/product_image"
+        />
+
+    <TextView
+        android:id="@+id/product_price"
+        android:layout_width="88dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/product_image"
+        android:text="25 L/l"
+        android:textColor="#DE000000"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        />
+
+    <ImageView
+        android:id="@+id/account_image"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="25dp"
+        android:layout_toEndOf="@id/product_image"
+        android:src="@drawable/ic_avdefault_avatar"
+        />
+
+    <TextView
+        android:id="@+id/acc_name"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="25dp"
+        android:layout_toEndOf="@id/account_image"
+        android:text="Account name"
+        android:textSize="12sp"
+        android:textColor="#212121"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="8dp"
+        android:layout_toEndOf="@id/product_image"
+        android:layout_below="@id/account_image"
+        android:textColor="#DE000000"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:text="Palinka"
+        />
+
+    <TextView
+        android:id="@+id/order_button"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="8dp"
+        android:layout_below="@id/title"
+        android:layout_toEndOf="@id/product_image"
+        android:background="@drawable/black_button"
+        android:text="Order now"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:textColor="#EEEEEE"
+        android:gravity="center"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:visibility="gone"
+        />
+
+    <ImageView
+        android:id="@+id/inactive_status_icon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_inactive"
+        android:layout_toEndOf="@id/product_image"
+        android:layout_below="@id/title"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="8dp"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/inactive_status_text"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@id/inactive_status_icon"
+        android:layout_below="@id/title"
+        android:text="Inactive"
+        android:textColor="#9A9A9A"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        />
+
+    <ImageView
+        android:id="@+id/active_status_icon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_active"
+        android:layout_toEndOf="@id/product_image"
+        android:layout_below="@id/title"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="8dp"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/active_status_text"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="4dp"
+        android:layout_toEndOf="@id/active_status_icon"
+        android:layout_below="@id/title"
+        android:text="Active"
+        android:textColor="@color/turqoise"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        />
+
+
+
+</RelativeLayout>

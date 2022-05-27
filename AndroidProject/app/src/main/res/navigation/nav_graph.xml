@@ -3,19 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/loginFragment"
+    >
 
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.androidproject.fragments.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
+        tools:layout="@layout/login_fragment"
+        >
+
+        <action android:id="@+id/toTimeLine"
+            app:destination="@id/TimeLineFragment"/>
+
         <action
-            android:id="@+id/action_loginFragment_to_listFragment"
-            app:destination="@id/listFragment" />
-        <action
-            android:id="@+id/action_loginFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
+            android:id="@+id/action_loginFragment_to_timeLineFragment"
+            app:destination="@id/TimeLineFragment" />
+
+        <action app:destination="@id/forgotPasswordFragment"
+            android:id="@+id/action_login_toForgotPassword"/>
+
+
         <action
             android:id="@+id/action_loginFragment_to_forgotpasswordFragment"
             app:destination="@id/forgotPasswordFragment" />
@@ -23,45 +31,88 @@
             android:id="@+id/action_loginFragment_to_registrationFragment"
             app:destination="@id/registerFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.example.androidproject.fragments.RegistrationFragment"
         android:label="fragment_registration"
         tools:layout="@layout/fragment_registration" >
+
         <action
-            android:id="@+id/action_registrationFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
-        <action
-            android:id="@+id/action_registrationFragment_to_activationFragment"
-            app:destination="@id/activateFragment" />
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/registerFragment"
+            app:popUpToInclusive="true" />
+        <!--        <action-->
+        <!--            android:id="@+id/action_registrationFragment_to_activationFragment"-->
+        <!--            app:destination="@id/activateFragment" />-->
     </fragment>
     <fragment
-        android:id="@+id/listFragment"
-        android:name="com.example.androidproject.fragments.ListFragment"
+        android:id="@+id/TimeLineFragment"
+        android:name="com.example.androidproject.fragments.TimeLineFragment"
         android:label="fragment_list"
-        tools:layout="@layout/fragment_list" />
+        tools:layout="@layout/fragment_list" >
+
+        <action android:id="@+id/timeline_toMarket"
+            app:destination="@id/marketFragment"/>
+
+        <action android:id="@+id/timeline_toAccount"
+            app:destination="@+id/accountFragment"/>
+
+    </fragment>
     <fragment
         android:id="@+id/forgotPasswordFragment"
         android:name="com.example.androidproject.fragments.ForgotPasswordFragment"
         android:label="fragment_forgot_password"
-        tools:layout="@layout/fragment_forgot_password">
+        tools:layout="@layout/forgot_password_fragment">
         <action
             android:id="@+id/action_forgotpasswordFragment_to_loginFragment"
             app:destination="@id/loginFragment"/>
     </fragment>
+
     <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.example.androidproject.fragments.ProfileFragment"
-        android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile">
+        android:id="@+id/marketFragment"
+        android:name="com.example.androidproject.fragments.MarketFragment"
+        android:label="market_fragment"
+        tools:layout="@layout/timeline_fragment">
+
+        <action app:destination="@id/TimeLineFragment"
+            android:id="@+id/market_toTimeline"/>
     </fragment>
+
     <fragment
-        android:id="@+id/activateFragment"
-        android:name="com.example.androidproject.fragments.ProfileFragment"
-        android:label="fragment_activation"
-        tools:layout="@layout/fragment_activation">
-        <action
-            android:id="@+id/action_activationFragment_to_loginFragment"
-            app:destination="@id/loginFragment"/>
+        android:id="@+id/accountFragment"
+        android:name="com.example.androidproject.fragments.AccountFragment"
+        android:label="account_fragment"
+        tools:layout="@layout/account_fragment">
     </fragment>
+
+    <fragment
+        android:id="@+id/imageDialogFragment"
+        android:name="com.example.androidproject.fragments.ImageDialogFragment"
+        android:label="dialog_fragment"
+        tools:layout="@layout/image_big_fragment"/>
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.androidproject.fragments.DetailFragment"
+        android:label="detail_fragment"
+        tools:layout="@layout/detail_fragment"/>
+
+    <fragment
+        android:id="@+id/createFareFragment"
+        android:name="com.example.androidproject.fragments.CreateFareFragment"
+        android:label="createFareFragment"
+        tools:layout="@layout/create_fare_fragment"/>
+
+
+    <!--    <fragment-->
+    <!--        android:id="@+id/activateFragment"-->
+    <!--        android:name="com.example.androidproject.fragments.ProfileFragment"-->
+    <!--        android:label="fragment_activation"-->
+    <!--        tools:layout="@layout/fragment_activation">-->
+    <!--        <action-->
+    <!--            android:id="@+id/action_activationFragment_to_loginFragment"-->
+    <!--            app:destination="@id/loginFragment"/>-->
+    <!--    </fragment>-->
 </navigation>
