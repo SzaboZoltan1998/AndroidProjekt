@@ -3,15 +3,22 @@ package com.example.androidproject.api
 import android.net.http.HttpResponseCache
 import com.example.androidproject.model.*
 import com.example.androidproject.utils.Constants
-import retrofit2.Response
+import io.reactivex.Observable
 import retrofit2.http.*
+import java.net.SocketTimeoutException
 
 interface MarketApi {
     @POST(Constants.LOGIN_URL)
-    suspend fun login(@Body request: LoginRequest): LoginResponse
+    suspend fun login(@Body request: LoginModel): LoginResponseModel
 
     @GET(Constants.GET_PRODUCT_URL)
     suspend fun getProducts(@Header("token") token: String): ProductResponse
+
+    @GET(Constants.GET_PRODUCT_URL)
+    suspend fun  getMyProducts(
+        @Header("token") token: String,
+        @Header("filter") filter: String
+    ): ProductResponse
 
     @POST(Constants.REGISTER_URL)
     suspend fun register(@Body request: RegisterRequest) : RegisterResponse

@@ -1,8 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.AndroidProject" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.App" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimary">#00B5C0</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
@@ -13,4 +13,41 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="OutlineBox" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textColorHint">#EEEEEE</item>
+        <item name="hintTextColor">#00B5C0</item>
+        <item name="boxStrokeColor">#00B5C0</item>
+        <item name="helperTextTextColor">#EE3B02</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+
+    <style name="OutlineBoxTransparent" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textColorHint">#EEEEEE</item>
+        <item name="hintTextColor">#EEEEEE</item>
+        <item name="boxStrokeColor">@android:color/transparent</item>
+    </style>
+
+    <style name="OutlineBoxTransparentFare" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textColorHint">#000000</item>
+        <item name="hintTextColor">#161616</item>
+        <item name="boxStrokeColor">@android:color/transparent</item>
+    </style>
+
+    <style name="TextViewBlackColor" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#212121</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="turqioseColor" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/turqoise</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+
 </resources>

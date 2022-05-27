@@ -43,4 +43,4 @@ class ImageDialogFragment : DialogFragment() {
                 .into(mBinding!!.imageContainer)
         }
     }
-}}
+}
