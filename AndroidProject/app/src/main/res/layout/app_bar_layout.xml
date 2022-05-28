@@ -5,7 +5,7 @@
     android:orientation="horizontal"
     android:background="#212121"
     >
-
+    
     <ImageView
         android:id="@+id/main_button"
         android:layout_width="wrap_content"
@@ -26,7 +26,7 @@
         android:textColor="@color/white"
         android:layout_toEndOf="@id/main_button"
         />
-
+    
     <ImageView
         android:id="@+id/logo"
         android:layout_width="wrap_content"

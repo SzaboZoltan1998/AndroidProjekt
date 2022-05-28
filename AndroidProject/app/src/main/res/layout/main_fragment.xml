@@ -13,7 +13,7 @@
         android:layout_height="80dp"
         />
 
-    <com.example.androidproject.views.SearchView
+    <com.example.app.views.SearchView
         android:id="@+id/search_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

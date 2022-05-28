@@ -6,6 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
+import androidx.navigation.ui.setupActionBarWithNavController
+import com.example.androidproject.MainActivity
 import com.example.androidproject.R
 import com.example.androidproject.databinding.MainFragmentBinding
 import com.example.androidproject.enums.BottomNavEnum

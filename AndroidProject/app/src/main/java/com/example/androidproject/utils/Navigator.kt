@@ -62,11 +62,11 @@ class Navigator private constructor(context: Context) {
         bundle.putSerializable("KEY_MAIN_LISTENER", mMainFragmentListener)
         mNavController?.navigate(R.id.timeline_toAccount, bundle)
     }
-    //
+//
     fun showMarketFragment() {
         mNavController?.navigate(R.id.marketFragment, createMainFragmentListenerBundle())
     }
-    //
+//
     fun showCreateFareFragment() {
         mNavController?.navigate(R.id.createFareFragment, createMainFragmentListenerBundle())
     }

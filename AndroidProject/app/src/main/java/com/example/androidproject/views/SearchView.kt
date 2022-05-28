@@ -1,4 +1,4 @@
-package com.example.androidproject.views
+package com.example.app.views
 
 import android.content.Context
 import android.util.AttributeSet

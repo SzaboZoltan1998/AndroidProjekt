@@ -16,8 +16,9 @@ data class Product(val rating: Double,
                    val units: String,
                    val description: String,
                    val title: String,
-                   val images: List<Image>,
-                   val creation_time: Long
+                   val images: List<Image> = listOf(),
+                   val creation_time: Long,
+                   val messages: List<String> = listOf()
 )
 
 @JsonClass(generateAdapter = true)

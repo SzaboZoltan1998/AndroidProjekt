@@ -44,8 +44,8 @@
             app:popUpTo="@id/registerFragment"
             app:popUpToInclusive="true" />
         <!--        <action-->
-        <!--            android:id="@+id/action_registrationFragment_to_activationFragment"-->
-        <!--            app:destination="@id/activateFragment" />-->
+<!--            android:id="@+id/action_registrationFragment_to_activationFragment"-->
+<!--            app:destination="@id/activateFragment" />-->
     </fragment>
     <fragment
         android:id="@+id/TimeLineFragment"
@@ -106,13 +106,13 @@
         tools:layout="@layout/create_fare_fragment"/>
 
 
-    <!--    <fragment-->
-    <!--        android:id="@+id/activateFragment"-->
-    <!--        android:name="com.example.androidproject.fragments.ProfileFragment"-->
-    <!--        android:label="fragment_activation"-->
-    <!--        tools:layout="@layout/fragment_activation">-->
-    <!--        <action-->
-    <!--            android:id="@+id/action_activationFragment_to_loginFragment"-->
-    <!--            app:destination="@id/loginFragment"/>-->
-    <!--    </fragment>-->
+<!--    <fragment-->
+<!--        android:id="@+id/activateFragment"-->
+<!--        android:name="com.example.androidproject.fragments.ProfileFragment"-->
+<!--        android:label="fragment_activation"-->
+<!--        tools:layout="@layout/fragment_activation">-->
+<!--        <action-->
+<!--            android:id="@+id/action_activationFragment_to_loginFragment"-->
+<!--            app:destination="@id/loginFragment"/>-->
+<!--    </fragment>-->
 </navigation>

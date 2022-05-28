@@ -3,7 +3,7 @@ package com.example.androidproject.model
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-data class LoginResponseModel(
+data class LoginResponseModel (
     @SerializedName("username")
     @Expose
     var username: String? = null,

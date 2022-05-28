@@ -33,8 +33,7 @@ data class RegisterRequest(
     var username: String,
     var password: String,
     var email: String,
-    var phone_number: String,
-    var userImage: File
+    var phone_number: String
 
 )
 
