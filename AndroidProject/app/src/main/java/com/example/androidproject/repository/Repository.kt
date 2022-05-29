@@ -6,6 +6,7 @@ import android.util.Log
 import com.example.androidproject.api.RetrofitInstance
 import com.example.androidproject.model.*
 import com.example.androidproject.utils.SharedPrefUtils
+import okhttp3.ResponseBody
 
 class Repository {
 
@@ -31,7 +32,7 @@ class Repository {
         return RetrofitInstance.api.register(request)
     }
 
-    suspend fun activate(username: String) : HttpResponseCache {
+    suspend fun activate(username: String) : ResponseBody {
         return RetrofitInstance.api.activate(username)
     }
     suspend fun change(request: UpdateUserDataRequest):UpdateUserDataRespons{

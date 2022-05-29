@@ -11,6 +11,7 @@ import com.example.androidproject.model.Activate
 import com.example.androidproject.model.RegisterRequest
 import com.example.androidproject.model.User
 import com.example.androidproject.repository.Repository
+import com.example.androidproject.utils.Navigator
 import com.example.androidproject.utils.ToastError
 import org.jsoup.Jsoup
 import java.io.File
@@ -25,30 +26,33 @@ class RegistrationViewModel (val context: Context, val repository: Repository) :
         user.value = User()
     }
 
-    suspend fun register()
+    suspend fun
+            register(user: User)
     {
         val request =
-            RegisterRequest(username = user.value!!.username, password = user.value!!.password,
-            email = user.value!!.email,phone_number = user.value!!.phone_number)
+            RegisterRequest(username = user.username, password = user.password,
+            email = user.email,phone_number = user.phone_number)
         try {
+            Log.d("3SS", "register: "+request.toString())
             repository.register(request)
-            Log.d("xxx", "MyApplication - token:  ${MyApplication.code}")
-            activate()
+            Log.d("xxx", "MyApplication - Register success")
+            activate(request.username)
         } catch (e: Exception) {
             ToastError.showtoast(context, e)
-            Log.d("xxx", "LoginViewModel - exception: ${e.toString()}")
+            Log.d("xxx", "LoginViewModel - exception: ", e)
 
         }
 
     }
 
-    suspend fun activate() {
+    private suspend fun activate(userName: String) {
         try {
-            repository.activate(user.value!!.username)
-            Log.d("xxx", "MyApplication - token:  ${MyApplication.code}")
+            repository.activate(username = userName)
+            Log.d("xxx", "MyApplication - Activate success")
+            Navigator.getsInstance(context).goBack()
         } catch (e: Exception) {
             ToastError.showtoast(context, e)
-            Log.d("xxx", "LoginViewModel - exception: ${e.toString()}")
+            Log.d("xxx", "LoginViewModel - exception: $e")
 
         }
     }

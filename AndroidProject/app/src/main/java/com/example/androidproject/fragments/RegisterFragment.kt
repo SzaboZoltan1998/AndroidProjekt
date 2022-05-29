@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.example.androidproject.databinding.RegisterFragmentBinding
 import com.example.androidproject.interfaces.MainFragmentListener
+import com.example.androidproject.model.User
 import com.example.androidproject.repository.Repository
 import com.example.androidproject.viewmodels.RegistrationViewModel
 import com.example.androidproject.viewmodels.RegistrationViewModelFactory
@@ -51,7 +52,13 @@ class RegisterFragment() : Fragment() {
 
     private fun initViews() {
         mBinding!!.registerButton.setOnClickListener {
-            lifecycleScope.launch { mViewModel?.register() }
+            val user = User(
+                mBinding!!.userNameEt.text.toString(),
+                mBinding!!.passwordEt.text.toString(),
+                mBinding!!.emailEt.text.toString(),
+                mBinding!!.phoneNumberEt.text.toString()
+            )
+            lifecycleScope.launch { mViewModel?.register(user) }
         }
     }
 

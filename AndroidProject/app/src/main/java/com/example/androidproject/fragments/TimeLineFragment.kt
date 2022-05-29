@@ -16,6 +16,7 @@ import com.example.androidproject.adapters.TimeLineRecyclerViewAdapter
 import com.example.androidproject.databinding.TimelineFragmentBinding
 import com.example.androidproject.enums.BottomNavEnum
 import com.example.androidproject.interfaces.MainFragmentListener
+import com.example.androidproject.interfaces.OnSearchListener
 import com.example.androidproject.model.Product
 import com.example.androidproject.repository.Repository
 import com.example.androidproject.viewmodels.RegistrationViewModel
@@ -24,10 +25,11 @@ import com.example.androidproject.viewmodels.TimelineFactory
 import com.example.androidproject.viewmodels.TimelineViewModel
 import kotlinx.coroutines.launch
 
-class TimeLineFragment() : Fragment() {
+class TimeLineFragment() : Fragment(), OnSearchListener {
     private var mMainFragmentListener: MainFragmentListener? = null
     private var mBinding: TimelineFragmentBinding? = null
     private var mViewModel: TimelineViewModel? = null
+    private var adapter: TimeLineRecyclerViewAdapter? = null
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -58,6 +60,7 @@ class TimeLineFragment() : Fragment() {
     }
 
     private fun initViews() {
+        mMainFragmentListener?.setSearchListener(this)
         mMainFragmentListener?.showBottomNav()
         mMainFragmentListener?.showHomeIcons()
         mMainFragmentListener?.setBottomNavItem(BottomNavEnum.TIMELINE)
@@ -77,10 +80,23 @@ class TimeLineFragment() : Fragment() {
 
         mViewModel!!.responseData.observe(viewLifecycleOwner){ model ->
             run {
-                val adapter = TimeLineRecyclerViewAdapter(model.products.toMutableList(), false)
+                adapter = TimeLineRecyclerViewAdapter(model.products.toMutableList(), false)
                 mBinding!!.timelineRv.adapter = adapter
             }
 
         }
+    }
+
+    override fun onSearch(text: String) {
+        val items = adapter!!.orders
+        for (item : Any in items) {
+            val product = item as Product
+            if (!product.title.contains(text)) {
+                items.remove(product)
+            }
+        }
+
+        adapter!!.orders = items
+        adapter?.notifyDataSetChanged()
     }
 }

@@ -1,11 +1,9 @@
 package com.example.androidproject.api
 
-import android.net.http.HttpResponseCache
 import com.example.androidproject.model.*
 import com.example.androidproject.utils.Constants
-import io.reactivex.Observable
+import okhttp3.ResponseBody
 import retrofit2.http.*
-import java.net.SocketTimeoutException
 
 interface MarketApi {
     @POST(Constants.LOGIN_URL)
@@ -24,7 +22,7 @@ interface MarketApi {
     suspend fun register(@Body request: RegisterRequest) : RegisterResponse
 
     @GET(Constants.ACTIVATE_URL)
-    suspend fun activate(@Query("username") userName: String) : HttpResponseCache
+    suspend fun activate(@Query("username") userName: String) : ResponseBody
 
     @POST(Constants.CHANGE_PROFILE_URL)
     suspend fun change(@Body request: UpdateUserDataRequest):UpdateUserDataRespons

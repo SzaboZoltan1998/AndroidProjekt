@@ -15,8 +15,7 @@ import com.example.androidproject.interfaces.OnItemClickListener
 import com.example.androidproject.model.Product
 
 class TimeLineRecyclerViewAdapter : RecyclerView.Adapter<TimeLineRecyclerViewAdapter.ViewHolder> {
-    var orders: MutableList<Any> = ArrayList()
-        private set
+    public var orders: MutableList<Any> = ArrayList()
     private var mIsMarketActivated = false
     private var mOnItemClickListener: OnItemClickListener? = null
     private var mContext: Context? = null

@@ -25,6 +25,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.androidproject.databinding.LoginFragmentBinding
 import com.example.androidproject.interfaces.MainFragmentListener
 import com.example.androidproject.model.LoginModel
+import com.example.androidproject.model.User
 import com.example.androidproject.utils.Navigator
 import com.example.androidproject.utils.SharedPrefUtils
 import com.example.androidproject.viewmodels.LoginViewModel

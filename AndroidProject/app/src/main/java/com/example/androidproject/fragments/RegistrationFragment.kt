@@ -24,6 +24,7 @@ import com.example.androidproject.repository.Repository
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.androidproject.databinding.RegisterFragmentBinding
 import com.example.androidproject.interfaces.MainFragmentListener
+import com.example.androidproject.model.User
 import com.example.androidproject.viewmodels.*
 import io.reactivex.schedulers.Schedulers
 import kotlinx.coroutines.launch
@@ -63,8 +64,14 @@ class RegistrationFragment : Fragment() {
 
     private fun initViews() {
         mBinding!!.registerButton.setOnClickListener {
+            val user = User(
+                mBinding!!.userNameEt.text.toString(),
+                mBinding!!.passwordEt.text.toString(),
+                mBinding!!.emailEt.text.toString(),
+                mBinding!!.phoneNumberEt.text.toString()
+            )
             lifecycleScope.launch {
-                registrationViewModel.register()
+                registrationViewModel.register(user)
             }
         }
     }

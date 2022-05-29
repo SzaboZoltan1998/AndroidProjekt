@@ -14,6 +14,7 @@ import com.example.androidproject.databinding.MainFragmentBinding
 import com.example.androidproject.enums.BottomNavEnum
 import com.example.androidproject.enums.MenuViewEnum
 import com.example.androidproject.interfaces.MainFragmentListener
+import com.example.androidproject.interfaces.OnSearchListener
 import com.example.androidproject.utils.Navigator
 
 
@@ -117,5 +118,9 @@ open class MainFragment : NavHostFragment(),
 
     override fun showDetailFragmentIcons() {
         mBaseBinding!!.appBar.showDetailIcons()
+    }
+
+    override fun setSearchListener(listener: OnSearchListener?) {
+        mBaseBinding!!.searchView.setListener(listener!!)
     }
 }
